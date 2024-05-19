@@ -1,2 +1,11 @@
-package com.example.springbootfirst;public class Laptop {
+package com.example.springbootfirst;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Laptop {
+
+    public void compile(){
+        System.out.println("Compiling");
+    }
 }
