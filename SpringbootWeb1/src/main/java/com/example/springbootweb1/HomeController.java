@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,6 +17,11 @@ public class HomeController {
     public String home(){
         System.out.println("Home method called!");
         return "index";
+    }
+
+    @RequestMapping("/alien")
+    public String homeAlien(){
+        return "index1";
     }
 
 //    @RequestMapping("add")
@@ -58,5 +64,21 @@ public class HomeController {
         mv.setViewName("result");
         System.out.println(result);
         return mv;
+    }
+
+//    @RequestMapping("addAlien")
+//    public ModelAndView addAlien(@RequestParam("aid") int aid,@RequestParam("aname") String aname, ModelAndView mv){
+//        Alien alien = new Alien();
+//        alien.setAid(aid);
+//        alien.setAname(aname);
+//        mv.addObject("alien", alien);
+//        mv.setViewName("result1");
+//        System.out.println(alien);
+//        return mv;
+//    }
+
+    @RequestMapping("addAlien")
+    public String addAlien(@ModelAttribute("alien1") Alien alien){
+        return "result1";
     }
 }
