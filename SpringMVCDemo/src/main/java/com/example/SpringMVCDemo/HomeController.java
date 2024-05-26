@@ -1,14 +1,9 @@
-package com.example.springbootweb1;
+package com.example.SpringMVCDemo;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
-import org.springframework.context.annotation.Conditional;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -60,7 +55,7 @@ public class HomeController {
     public ModelAndView add(@RequestParam("num1") int number1,@RequestParam("num2") int number2, ModelAndView mv){
         //System.out.println("in add");
 
-        var result = number1 + number2;
+        int result = number1 + number2;
         mv.addObject("result", result);
         mv.setViewName("result");
         System.out.println(result);
@@ -89,3 +84,9 @@ public class HomeController {
         return "Java";
     }
 }
+
+
+// /Users/user/Projects/SpringProject
+
+
+//chmod a+x /Users/user/Projects/apache-tomcat-10.1.24bin/catalina.sh
